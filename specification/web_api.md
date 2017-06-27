@@ -12,6 +12,9 @@ Response:
 
 	result={'success'|'fail'}
 	reason=MESSAGE
+	known={true|false}
+
+`known` specifically tells whether the player is known to that registry or not
 
 ## `unban`
 
@@ -23,6 +26,7 @@ Response:
 
 	result={'success'|'fail'}
 	reason=MESSAGE
+	known={true|false}
 
 ## `isbanned`
 

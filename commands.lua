@@ -7,10 +7,22 @@ function tokenize(mystring)
 end
 
 
+minetest.register_chatcommand('unregister', {
+	params = '<name>',
+	description = '',
+	privs = {registrar=true},
+	func = function(playername, cstring)
+		local params = tokenize(cstring)
+
+		local res = pregistry:unregister(params[1])
+		minetest.chat_send_player(playername, res)
+	end,
+})
+
 minetest.register_chatcommand('ban', {
 	params = '<name>',
 	description = '',
-	privs = {},
+	privs = {registrar=true},
 	func = function(playername, cstring)
 		local params = tokenize(cstring)
 
@@ -22,7 +34,7 @@ minetest.register_chatcommand('ban', {
 minetest.register_chatcommand('unban', {
 	params = '<name>',
 	description = '',
-	privs = {},
+	privs = {registrar=true},
 	func = function(playername, cstring)
 		local params = tokenize(cstring)
 
@@ -34,7 +46,7 @@ minetest.register_chatcommand('unban', {
 minetest.register_chatcommand('isbanned', {
 	params = '<name>',
 	description = '',
-	privs = {},
+	privs = {registrar=true},
 	func = function(playername, cstring)
 		local params = tokenize(cstring)
 
@@ -46,7 +58,7 @@ minetest.register_chatcommand('isbanned', {
 minetest.register_chatcommand('banmode', {
 	params = '<name>',
 	description = '',
-	privs = {basic_privs=true},
+	privs = {registrar=true},
 	func = function(playername, cstring)
 		local params = tokenize(cstring)
 

@@ -7,6 +7,10 @@ function pregistry:ban(playername)
 	return "Banned "..playername
 end
 
+function pregistry:unregister(playername)
+	-- TODO run challenge routine
+end
+
 function pregistry:unban(playername)
 	pregistry.file:removeban(playername)
 	pregistry.api:unregisterban(playername)
