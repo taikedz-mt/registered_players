@@ -1,0 +1,1 @@
+pregistry.api = {}
