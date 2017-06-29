@@ -8,7 +8,7 @@ function pregistry:ban(playername)
 end
 
 function pregistry:unregister(playername)
-	-- TODO run challenge routine
+	-- TODO run challenge routine on unregistered player
 end
 
 function pregistry:unban(playername)
